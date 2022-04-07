@@ -1,38 +1,144 @@
-.App {
+:root {
+  --primary-color: #decfa3;
+  --white-color: #fff;
+}
+
+.middle-box {
+  width: 60rem;
+  border: 1px solid rgba(236, 236, 236, 0.5);
+  border-radius: 2px;
+  padding: 3rem;
   text-align: center;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.middle-box__title {
+  font-size: 4.5rem;
+  color: var(--white-color);
+  font-weight: 600;
+  letter-spacing: 0.5rem;
+  line-height: 1;
+  /* margin-bottom: 5rem; */
+  font-weight: 200;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.middle-box__subtitle {
+  color: var(--white-color);
+  font-weight: 300;
+  font-weight: 200;
+  font-size: 2.5rem;
+  line-height: 5;
+  /* margin-bottom: 6.8rem; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.middle-box p {
+  font-size: 1rem;
+  font-weight: 200;
+  padding-bottom: 1rem;
+  color: var(--primary-color);
+  line-height: 1.5;
+}
+
+.middle-box form {
+  margin: 0 0 2rem 0;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.middle-box input[type='email'] {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  padding: 2.4rem 0 2.4rem 2rem;
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  width: 55%;
+  height: 6rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+::placeholder {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.middle-box button {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--primary-color);
+  color: rgb(255, 255, 255);
+  outline: none;
+  border: none;
+  padding: 1.7rem 2.5rem;
+  height: 6rem;
+  font-family: inherit;
+  font-size: 2.5rem;
+  font-weight: 200;
+  width: 40%;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  letter-spacing: 0.2rem;
+}
+
+.middle-box button .text {
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+}
+
+.middle-box button::after {
+  content: 'NOTIFY ME';
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease-in-out;
+}
+
+.middle-box button:hover {
+  color: var(--primary-color);
+  background-color: var(--white-color);
+}
+
+.middle-box button:hover .text {
+  transform: translateY(-200%);
+}
+
+.middle-box button:hover::after {
+  top: 50%;
+}
+
+.middle-box .logo {
+  margin: 0 0 5rem 0;
+  width: 30rem;
+  /* animation: rotateTimer 3s ease infinite; */
+}
+
+@keyframes rotateTimer {
+  40% {
+    transform: translate(-50%, -50%) rotate(90deg);
   }
-  to {
-    transform: rotate(360deg);
+
+  60% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@media only screen and (max-width: 640px) {
+  .middle-box {
+    width: 40rem;
+    padding: 5rem 4rem;
+  }
+  .middle-box input[type='email'] {
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+
+  .middle-box button {
+    width: 60%;
   }
 }
