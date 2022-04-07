@@ -2,6 +2,7 @@
 import './App.css';
 import ReactDOM from 'react-dom';
 import logo from './logo.png';
+import sprite from './sprite.svg';
 import video from './bg-video.mp4';
 
 export default function App() {
@@ -14,10 +15,42 @@ export default function App() {
       <form action="">
         <input type="email" name="email" placeholder="Email" />
         <button type="submit">
-          <span className="text">NOTIFY ME </span>
+          <span className="text">Me tenir informé</span>
         </button>
       </form>
       <p>Nous ne partagerons pas votre e-mail avec des tiers.</p>
+      <div className="social">
+        <a
+          className="social__link"
+          href="https://www.google.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg className="social__icon">
+            <use xlinkHref={sprite + '#icon-instagram'}></use>
+          </svg>
+        </a>
+        <a
+          className="social__link"
+          href="https://www.google.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg className="social__icon">
+            <use xlinkHref={sprite + '#icon-twitter'}></use>
+          </svg>
+        </a>
+        <a
+          className="social__link"
+          href="https://www.google.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg className="social__icon">
+            <use xlinkHref={sprite + '#icon-linkedin'}></use>
+          </svg>
+        </a>
+      </div>
 
       {ReactDOM.createPortal(
         <div className="bg-video">

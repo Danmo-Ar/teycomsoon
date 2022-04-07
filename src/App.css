@@ -4,8 +4,7 @@
 }
 
 .middle-box {
-  width: 60rem;
-  border: 1px solid rgba(236, 236, 236, 0.5);
+  min-width: 60rem;
   border-radius: 2px;
   padding: 3rem;
   text-align: center;
@@ -18,14 +17,13 @@
   font-weight: 600;
   letter-spacing: 0.5rem;
   line-height: 1;
-  /* margin-bottom: 5rem; */
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .middle-box__subtitle {
   color: var(--white-color);
   font-weight: 300;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 2.5rem;
   line-height: 5;
   /* margin-bottom: 6.8rem; */
@@ -33,7 +31,7 @@
 
 .middle-box p {
   font-size: 1rem;
-  font-weight: 200;
+  font-weight: 300;
   padding-bottom: 1rem;
   color: var(--primary-color);
   line-height: 1.5;
@@ -54,13 +52,13 @@
   padding: 2.4rem 0 2.4rem 2rem;
   font-size: 1.6rem;
   margin-right: 1rem;
-  width: 55%;
+  width: 60%;
   height: 6rem;
 }
 
 ::placeholder {
   font-size: 1.2rem;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .middle-box button {
@@ -70,11 +68,11 @@
   color: rgb(255, 255, 255);
   outline: none;
   border: none;
-  padding: 1.7rem 2.5rem;
+  padding: 1.7rem 0.5rem;
   height: 6rem;
   font-family: inherit;
-  font-size: 2.5rem;
-  font-weight: 200;
+  font-size: 1.8rem;
+  font-weight: 300;
   width: 40%;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
@@ -83,11 +81,12 @@
 
 .middle-box button .text {
   transition: all 0.4s ease-in-out;
+  width: 100%;
   display: inline-block;
 }
 
 .middle-box button::after {
-  content: 'NOTIFY ME';
+  content: 'Me tenir informé';
   position: absolute;
   top: 200%;
   left: 50%;
@@ -115,6 +114,19 @@
   /* animation: rotateTimer 3s ease infinite; */
 }
 
+.middle-box .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle-box .social__link .social__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: #fff;
+  margin: 2rem 2rem 0 0;
+}
+
 @keyframes rotateTimer {
   40% {
     transform: translate(-50%, -50%) rotate(90deg);
@@ -128,17 +140,24 @@
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 600px) {
+  .middle-box .middle-box__subtitle {
+    width: 100%;
+  }
   .middle-box {
     width: 40rem;
     padding: 5rem 4rem;
   }
+  .middle-box form {
+    flex-direction: column;
+  }
   .middle-box input[type='email'] {
-    width: 100%;
+    width: 70%;
     margin: 0 0 1rem 0;
   }
 
   .middle-box button {
-    width: 60%;
+    display: block;
+    width: 40%;
   }
 }
